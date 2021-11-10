@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
+
 import AddIcon from "@material-ui/icons/Add";
 import Fab from "@material-ui/core/Fab";
 import Zoom from "@material-ui/core/Zoom";
+import { v4 as uuidv4 } from "uuid";
 
 function CreateArea(p) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [isExpanded, setIsExpanded] = useState(false);
   function handleTitle(event) {
+    // destructuring variables
     const { value: val } = event.target;
     setTitle(val);
   }

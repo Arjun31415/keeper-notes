@@ -1,8 +1,8 @@
-import React from "react";
+/* eslint-disable react/prop-types */
 import DeleteIcon from "@material-ui/icons/Delete";
+import React from "react";
 function Note(props) {
-  
-  function handleDelete(events) {
+  function handleDelete() {
     props.delete(props.id);
   }
   return (

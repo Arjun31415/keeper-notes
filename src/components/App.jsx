@@ -1,16 +1,21 @@
 import React, { useState } from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import Note from "./Note";
+
 import CreateArea from "./CreateArea";
+import Footer from "./Footer";
+import Header from "./Header";
+import Note from "./Note";
 
 function App() {
+  // React hook
   const [notes, setNotes] = useState([]);
 
   function addNote(newNote) {
+    // Spread operator
+    // [1,2,3,4]
     setNotes([...notes, newNote]);
   }
   function deleteNote(id) {
+    // arrow functions
     setNotes((prev) => prev.filter((x) => x.id !== id));
   }
   return (
