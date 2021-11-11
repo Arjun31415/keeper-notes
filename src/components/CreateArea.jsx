@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import AddIcon from "@material-ui/icons/Add";
 import Fab from "@material-ui/core/Fab";
@@ -22,6 +22,24 @@ function CreateArea(p) {
   //     setIsExpanded(false);
   //   }
   // });
+  useEffect(() => {
+    window.addEventListener("click", (evt) => {
+      const formElement = document.getElementsByClassName("create-note")[0];
+      let targetElement = evt.target; // clicked element
+
+      do {
+        if (targetElement == formElement) {
+          // This is a click inside. Do nothing, just return.
+          return;
+        }
+        // Go up the DOM
+        targetElement = targetElement.parentNode;
+      } while (targetElement);
+
+      // This is a click outside.
+      setIsExpanded(false);
+    });
+  }, []);
 
   function handleContent(event) {
     const { value: val } = event.target;
@@ -38,14 +56,15 @@ function CreateArea(p) {
     setIsExpanded(true);
   }
   return (
-    <div>
-      <form className="create-note">
+    <div tabIndex={100}>
+      <form className="create-note" tabIndex={0}>
         {isExpanded && (
           <input
             onChange={handleTitle}
             name="title"
             placeholder="Title"
             value={title}
+            tabIndex={1}
           />
         )}
         <textarea
@@ -55,6 +74,7 @@ function CreateArea(p) {
           placeholder="Take a note..."
           rows={isExpanded ? 3 : 1}
           value={content}
+          tabIndex={0}
         />
         <Zoom in={isExpanded}>
           <Fab onClick={handleClick}>
