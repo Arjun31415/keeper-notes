@@ -72,7 +72,6 @@ footer p {
     height: 36px;
     cursor: pointer;
     outline: none;
-
 }
 
 form.create-note {
@@ -109,4 +108,9 @@ form.create-note button {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     outline: none;
+}
+
+.signup__container {
+    display: flex;
+    justify-content: center;
 }

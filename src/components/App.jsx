@@ -28,7 +28,6 @@ function App() {
             path="/note"
             element={
               <>
-                {" "}
                 <CreateArea addNote={addNote} />
                 {notes.map((x) => (
                   <Note
@@ -42,7 +41,16 @@ function App() {
               </>
             }
           />
-          <Route path="/" element={<div> CYka Blyat </div>} />
+          <Route
+            path="/"
+            element={
+              <div className="signup__container">
+                <form>
+                  <label htmlFor="email">What is your email address?</label>
+                </form>
+              </div>
+            }
+          />
         </Routes>
         <Footer />
       </div>
