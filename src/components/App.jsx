@@ -5,6 +5,7 @@ import CreateArea from "./CreateArea";
 import Footer from "./Footer";
 import Header from "./Header";
 import Note from "./Note";
+import SignUp from "./SignUp";
 
 function App() {
   // React hook
@@ -41,16 +42,7 @@ function App() {
               </>
             }
           />
-          <Route
-            path="/"
-            element={
-              <div className="signup__container">
-                <form>
-                  <label htmlFor="email">What is your email address?</label>
-                </form>
-              </div>
-            }
-          />
+          <Route path="/" element={<SignUp />} />
         </Routes>
         <Footer />
       </div>
