@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 
-function SignUp() {
+function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   return (
-    <div className="signup__container">
+    <div className="login__container">
       <form
         method="post"
-        className="signup__form"
+        className="login__form"
         onSubmit={(e) => {
           e.preventDefault();
           console.log(e.target);
@@ -16,10 +16,10 @@ function SignUp() {
           console.log(password);
         }}
       >
-        <label htmlFor="email">What is your email address?</label>
+        <label htmlFor="email">Enter email address</label>
         <input
           id="email"
-          className="signup__email"
+          className="login__email"
           type="text"
           name="email"
           placeholder="Enter email."
@@ -27,25 +27,25 @@ function SignUp() {
           onChange={(e) => setEmail(e.target.value)}
         />
 
-        <label htmlFor="password">Create a password</label>
+        <label htmlFor="password">Enter password</label>
         <input
           id="password"
-          className="signup__password"
+          className="login__password"
           type="password"
           name="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button id="submit" className="signup__submit" type="submit">
-          Sign up
+        <button id="submit" className="login__submit" type="submit">
+          Login
         </button>
         <p>
-          {`Already have an account? `} <a href="/">Log In</a>
+          {`Don't have and account? `} <a href="/signup">Sign Up</a>
         </p>
       </form>
     </div>
   );
 }
 
-export default SignUp;
+export default Login;

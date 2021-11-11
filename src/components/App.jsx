@@ -4,6 +4,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import CreateArea from "./CreateArea";
 import Footer from "./Footer";
 import Header from "./Header";
+import Login from "./Login";
 import Note from "./Note";
 import SignUp from "./SignUp";
 
@@ -42,7 +43,8 @@ function App() {
               </>
             }
           />
-          <Route path="/" element={<SignUp />} />
+          <Route path="/signup" element={<SignUp />} />{" "}
+          <Route path="/" element={<Login />} />
         </Routes>
         <Footer />
       </div>

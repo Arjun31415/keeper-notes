@@ -15,7 +15,7 @@ body {
 }
 
 header {
-    background-color: #f5ba13;
+    background-color: rgb(245, 186, 19);
     margin: auto -16px;
     padding: 16px 32px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
@@ -111,21 +111,34 @@ form.create-note button {
 }
 
 .signup__container,
-.signup__form {
+.login__container,
+.signup__form,
+.login__form {
     display: flex;
     justify-content: center;
 }
 
-.signup__form {
+.signup__form,
+.login__form {
     flex-direction: column;
     padding: 10px;
 }
 
-.signup__submit {
+.signup__submit,
+.login__submit {
     width: max-content;
     padding: 0.4rem 1rem;
     border: none;
     border-radius: 999px;
     margin: 10px auto;
+}
 
+.login__form>p>a,
+.signup__form>p>a {
+    color: rgba(245, 186, 19, 0.8);
+}
+
+.login__form>p>a:hover,
+.signup__form>p>a:hover {
+    color: rgb(255, 187, 19, 1);
 }
