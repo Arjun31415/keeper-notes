@@ -28,7 +28,7 @@ function CreateArea(p) {
       let targetElement = evt.target; // clicked element
 
       do {
-        if (targetElement == formElement) {
+        if (targetElement === formElement) {
           // This is a click inside. Do nothing, just return.
           return;
         }
