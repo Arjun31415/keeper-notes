@@ -24,4 +24,4 @@ yarn-error.log*
 .env
 
 # vscode stuff
-.vscode/*
+.vscode/settings.json
