@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import CreateArea from "./CreateArea";
 import Footer from "./Footer";
@@ -19,20 +20,33 @@ function App() {
     setNotes((prev) => prev.filter((x) => x.id !== id));
   }
   return (
-    <div>
-      <Header />
-      <CreateArea addNote={addNote} />
-      {notes.map((x) => (
-        <Note
-          key={x.id}
-          title={x.title}
-          content={x.content}
-          id={x.id}
-          delete={deleteNote}
-        />
-      ))}
-      <Footer />
-    </div>
+    <Router>
+      <div>
+        <Header />
+        <Routes>
+          <Route
+            path="/note"
+            element={
+              <>
+                {" "}
+                <CreateArea addNote={addNote} />
+                {notes.map((x) => (
+                  <Note
+                    key={x.id}
+                    title={x.title}
+                    content={x.content}
+                    id={x.id}
+                    delete={deleteNote}
+                  />
+                ))}
+              </>
+            }
+          />
+          <Route path="/" element={<div> CYka Blyat </div>} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 export default App;
