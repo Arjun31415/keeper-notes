@@ -1,9 +1,7 @@
 import { Fab, Fade, Zoom } from "@mui/material";
 import React, { useEffect, useState } from "react";
 
-// import AddIcon from "@material-ui/icons/Add";
 import AddIcon from "@mui/icons-material/Add";
-// import PaletteIcon from "@material-ui/icons/Palette";
 import PaletteIcon from "@mui/icons-material/Palette";
 import { SwatchesPicker } from "react-color";
 import { v4 as uuidv4 } from "uuid";
@@ -29,18 +27,10 @@ function CreateArea(p) {
   const [displayColorPicker, setDisplayColorPicker] = useState(false);
   const [color, setColor] = useState(null);
   function handleTitle(event) {
-    // destructuring variables
     const { value: val } = event.target;
     setTitle(val);
   }
 
-  // $(document).mouseup(function (e) {
-  //   var container = $(".create-note");
-  //   console.log(container);
-  //   if (!container.is(e.target) && container.has(e.target).length === 0) {
-  //     setIsExpanded(false);
-  //   }
-  // });
   useEffect(() => {
     window.addEventListener("click", (evt) => {
       const formElement = document.getElementsByClassName("create-note")[0];
@@ -122,7 +112,7 @@ function CreateArea(p) {
               onClick={() => {
                 setDisplayColorPicker(!displayColorPicker);
               }}
-              style={{ backgroundColor: color == "#ffffff" ? "black" : color }}
+              style={{ backgroundColor: color === "#ffffff" ? "black" : color }}
             >
               <PaletteIcon
                 style={{
