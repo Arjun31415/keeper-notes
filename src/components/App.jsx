@@ -14,7 +14,7 @@ function App() {
 
   function addNote(newNote) {
     // Spread operator
-    // [1,2,3,4]
+    // console.log("newNote", newNote);
     setNotes([...notes, newNote]);
   }
   function deleteNote(id) {
@@ -38,6 +38,7 @@ function App() {
                     content={x.content}
                     id={x.id}
                     delete={deleteNote}
+                    color={x.color}
                   />
                 ))}
               </>

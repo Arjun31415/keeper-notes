@@ -1,14 +1,33 @@
+import { Fab, Fade, Zoom } from "@mui/material";
 import React, { useEffect, useState } from "react";
 
-import AddIcon from "@material-ui/icons/Add";
-import Fab from "@material-ui/core/Fab";
-import Zoom from "@material-ui/core/Zoom";
+// import AddIcon from "@material-ui/icons/Add";
+import AddIcon from "@mui/icons-material/Add";
+// import PaletteIcon from "@material-ui/icons/Palette";
+import PaletteIcon from "@mui/icons-material/Palette";
+import { SwatchesPicker } from "react-color";
 import { v4 as uuidv4 } from "uuid";
 
 function CreateArea(p) {
+  const lightColors = [
+    "#F28B82",
+    "#FBBC04",
+    "#FFF475",
+    "#CCFF90",
+    "#A7FFEB",
+    "#CBF0F8",
+    "#AECBFA",
+    "#D7AEFB",
+    "#FDCFE8",
+    "#E6C9A8",
+    "#E8EAED",
+    "#FFFFFF",
+  ];
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [isExpanded, setIsExpanded] = useState(false);
+  const [displayColorPicker, setDisplayColorPicker] = useState(false);
+  const [color, setColor] = useState(null);
   function handleTitle(event) {
     // destructuring variables
     const { value: val } = event.target;
@@ -38,6 +57,7 @@ function CreateArea(p) {
 
       // This is a click outside.
       setIsExpanded(false);
+      setDisplayColorPicker(false);
     });
   }, []);
 
@@ -48,16 +68,23 @@ function CreateArea(p) {
   function handleClick(event) {
     event.preventDefault();
     if (title === "" || content === "") return;
-    p.addNote({ id: uuidv4(), title: title, content: content });
+    console.log("handleClick: ", color);
+    p.addNote({ id: uuidv4(), title: title, content: content, color: color });
     setTitle("");
     setContent("");
+    setColor(null);
+    setDisplayColorPicker(false);
   }
   function handleExpand() {
     setIsExpanded(true);
   }
   return (
     <div tabIndex={100}>
-      <form className="create-note" tabIndex={0}>
+      <form
+        className="create-note"
+        tabIndex={0}
+        style={{ backgroundColor: color ? color : "white" }}
+      >
         {isExpanded && (
           <input
             onChange={handleTitle}
@@ -65,6 +92,7 @@ function CreateArea(p) {
             placeholder="Title"
             value={title}
             tabIndex={1}
+            style={{ backgroundColor: "transparent" }}
           />
         )}
         <textarea
@@ -75,12 +103,58 @@ function CreateArea(p) {
           rows={isExpanded ? 3 : 1}
           value={content}
           tabIndex={0}
+          style={{ backgroundColor: "transparent" }}
         />
-        <Zoom in={isExpanded}>
-          <Fab onClick={handleClick}>
-            <AddIcon />
-          </Fab>
-        </Zoom>
+        <div
+          style={{
+            display: "flex",
+            padding: "10px",
+            justifyContent: "space-around",
+          }}
+        >
+          <Zoom in={isExpanded}>
+            <Fab onClick={handleClick}>
+              <AddIcon style={{ zIndex: "3" }} />
+            </Fab>
+          </Zoom>
+          <Zoom in={isExpanded} style={{ marginRight: "5vw" }}>
+            <Fab
+              onClick={() => {
+                setDisplayColorPicker(!displayColorPicker);
+              }}
+              style={{ backgroundColor: color == "#ffffff" ? "black" : color }}
+            >
+              <PaletteIcon
+                style={{
+                  zIndex: "3",
+                }}
+              />
+            </Fab>
+          </Zoom>
+          <Fade in={isExpanded && displayColorPicker}>
+            <div
+              style={{
+                position: "absolute",
+                // zIndex: "2",
+                left: "330px",
+                top: "190px",
+                width: "min-content",
+              }}
+              hidden={!displayColorPicker}
+            >
+              <SwatchesPicker
+                colors={[lightColors]}
+                width={7000}
+                height={200}
+                onChange={(c) => {
+                  console.log(c);
+                  setColor(c.hex);
+                  console.log("color:", color);
+                }}
+              />
+            </div>
+          </Fade>
+        </div>{" "}
       </form>
     </div>
   );

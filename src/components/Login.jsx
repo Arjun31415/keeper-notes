@@ -41,7 +41,7 @@ function Login() {
           Login
         </button>
         <p>
-          {`Don't have and account? `} <a href="/signup">Sign Up</a>
+          {`Don't have an account? `} <a href="/signup">Sign Up</a>
         </p>
       </form>
     </div>
