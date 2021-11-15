@@ -34,7 +34,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "precommit": "pretty-quick --staged",
-    "predeploy": "cd ./build && netlify deploy",
+    "predeploy": "yarn build && cd ./build && netlify deploy",
     "deploy": "cd ./build && netlify deploy --prod"
   },
   "eslintConfig": {
