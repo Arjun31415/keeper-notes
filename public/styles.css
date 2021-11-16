@@ -133,13 +133,13 @@ form.create-note button {
   margin: 10px auto;
 }
 
-.login__form > p > a,
-.signup__form > p > a {
+.login__form>p>a,
+.signup__form>p>a {
   color: rgba(245, 186, 19, 0.8);
 }
 
-.login__form > p > a:hover,
-.signup__form > p > a:hover {
+.login__form>p>a:hover,
+.signup__form>p>a:hover {
   color: rgb(255, 187, 19, 1);
 }
 
