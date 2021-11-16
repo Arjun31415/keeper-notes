@@ -149,6 +149,8 @@ form.create-note button {
   padding: 7px;
   margin-bottom: 35px;
   border-radius: 5px;
+  border: none;
+  border: 1px solid rgb(255, 187, 19);
 }
 
 .login__password,
@@ -157,6 +159,13 @@ form.create-note button {
   padding: 7px;
   margin-bottom: 20px;
   border-radius: 5px;
+  border: none;
+  border: 1px solid rgb(255, 187, 19);
+}
+
+.signup__submit,
+.login__submit {
+  background-color: rgb(255, 187, 19);
 }
 
 .white-box {
