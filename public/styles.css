@@ -1,144 +1,179 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 html {
-    font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
-    background: #eee;
-    padding: 0 16px;
-    background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
+  background: #eee;
+  padding: 0 16px;
+  background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
 }
 
 header {
-    background-color: rgb(245, 186, 19);
-    margin: auto -16px;
-    padding: 16px 32px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  background-color: rgb(245, 186, 19);
+  margin: auto -16px;
+  padding: 16px 32px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 }
 
 header h1 {
-    color: #fff;
-    font-family: "McLaren", cursive;
-    font-weight: 200;
+  color: #fff;
+  font-family: "McLaren", cursive;
+  font-weight: 200;
 }
 
 footer {
-    position: absolute;
-    text-align: center;
-    bottom: 0;
-    width: 100%;
-    height: 2.5rem;
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
 }
 
 footer p {
-    color: #ccc;
+  color: #ccc;
 }
 
 .note {
-    background: #fff;
-    border-radius: 7px;
-    box-shadow: 0 2px 5px #ccc;
-    padding: 10px;
-    width: 240px;
-    margin: 16px;
-    float: left;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+  width: 240px;
+  margin: 16px;
+  float: left;
 }
 
 .note h1 {
-    font-size: 1.1em;
-    margin-bottom: 6px;
+  font-size: 1.1em;
+  margin-bottom: 6px;
 }
 
 .note p {
-    font-size: 1.1em;
-    margin-bottom: 10px;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .note button {
-    position: relative;
-    float: right;
-    background-color: Transparent;
-    margin-right: 10px;
-    color: #f5ba13;
-    border: none;
-    width: 36px;
-    height: 36px;
-    cursor: pointer;
-    outline: none;
+  position: relative;
+  float: right;
+  background-color: Transparent;
+  margin-right: 10px;
+  color: #f5ba13;
+  border: none;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  outline: none;
 }
 
 form.create-note {
-    position: relative;
-    width: 480px;
-    margin: 30px auto 20px auto;
-    background: #fff;
-    padding: 15px;
-    border-radius: 7px;
-    box-shadow: 0 1px 5px rgb(138, 137, 137);
+  position: relative;
+  width: 480px;
+  margin: 30px auto 20px auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
 }
 
 form.create-note input,
 form.create-note textarea {
-    width: 100%;
-    border: none;
-    padding: 4px;
-    outline: none;
-    font-size: 1.2em;
-    font-family: inherit;
-    resize: none;
+  width: 100%;
+  border: none;
+  padding: 4px;
+  outline: none;
+  font-size: 1.2em;
+  font-family: inherit;
+  resize: none;
 }
 
 form.create-note button {
-    position: absolute;
-    right: 18px;
-    bottom: -18px;
-    background: #f5ba13;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    outline: none;
+  position: absolute;
+  right: 18px;
+  bottom: -18px;
+  background: #f5ba13;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
 }
 
 .signup__container,
 .login__container,
 .signup__form,
 .login__form {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .signup__form,
 .login__form {
-    flex-direction: column;
-    padding: 10px;
+  flex-direction: column;
+  padding: 10px;
 }
 
 .signup__submit,
 .login__submit {
-    width: max-content;
-    padding: 0.4rem 1rem;
-    border: none;
-    border-radius: 999px;
-    margin: 10px auto;
+  width: max-content;
+  padding: 0.4rem 1rem;
+  border: none;
+  border-radius: 999px;
+  margin: 10px auto;
 }
 
-.login__form>p>a,
-.signup__form>p>a {
-    color: rgba(245, 186, 19, 0.8);
+.login__form > p > a,
+.signup__form > p > a {
+  color: rgba(245, 186, 19, 0.8);
 }
 
-.login__form>p>a:hover,
-.signup__form>p>a:hover {
-    color: rgb(255, 187, 19, 1);
+.login__form > p > a:hover,
+.signup__form > p > a:hover {
+  color: rgb(255, 187, 19, 1);
+}
+
+.login__email,
+.signup__email {
+  margin-top: 15px;
+  padding: 7px;
+  margin-bottom: 35px;
+  border-radius: 5px;
+}
+
+.login__password,
+.signup__password {
+  margin-top: 15px;
+  padding: 7px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.white-box {
+  width: 500px;
+  height: 330px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: 7px 7px 15px rgb(255, 187, 19);
 }

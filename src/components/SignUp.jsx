@@ -5,6 +5,9 @@ function SignUp() {
   const [password, setPassword] = useState("");
 
   return (
+<div class="container">
+  <div class="white-box">
+     
     <div className="signup__container">
       <form
         method="post"
@@ -45,6 +48,9 @@ function SignUp() {
         </p>
       </form>
     </div>
+  </div>
+</div>
+  
   );
 }
 

@@ -5,6 +5,8 @@ function Login() {
   const [password, setPassword] = useState("");
 
   return (
+    <div class="white-box">
+
     <div className="login__container">
       <form
         method="post"
@@ -44,6 +46,7 @@ function Login() {
           {`Don't have an account? `} <a href="/signup">Sign Up</a>
         </p>
       </form>
+    </div>
     </div>
   );
 }
