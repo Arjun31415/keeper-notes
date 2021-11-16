@@ -2,6 +2,7 @@
   "name": "keeper-notes",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://arj-pinit.netlify.app",
   "dependencies": {
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
