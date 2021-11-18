@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 /* eslint-disable react/prop-types */
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
-import { ItemTypes } from "../utils/constants.ts";
 import PaletteOutlinedIcon from "@mui/icons-material/PaletteOutlined";
 import PushPinOutlinedIcon from "@mui/icons-material/PushPinOutlined";
 import { SwatchesPicker } from "react-color";
@@ -29,14 +28,6 @@ function Note(props) {
   function handleDelete() {
     props.delete(props.id);
   }
-  // Make the NOTE Draggable
-  // const [{ isDragging }, drag] = useDrag(() => ({
-  //   type: ItemTypes.NOTE,
-  //   collect: (monitor) => ({
-  //     isDragging: !!monitor.isDragging(),
-  //   }),
-  // }));
-
   return (
     <div className="note" style={{ backgroundColor: color }}>
       <h1>{props.title}</h1>

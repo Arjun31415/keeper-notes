@@ -1,11 +1,9 @@
 import CreateArea from "./CreateArea";
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
 import Note from "./Note";
 import PropTypes from "prop-types";
 import React from "react";
 
-function CreateNotePage({ addNote, notes, deleteNote, setNotes }) {
+function CreateNotePage({ addNote, notes, deleteNote }) {
   return (
     <>
       {/* create note area */}
