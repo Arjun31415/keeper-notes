@@ -3,7 +3,7 @@ import Note from "./Note";
 import PropTypes from "prop-types";
 import React from "react";
 
-function CreateNotePage({ addNote, notes, deleteNote }) {
+export default function CreateNotePage({ addNote, notes, deleteNote }) {
   return (
     <>
       {/* create note area */}
@@ -36,5 +36,3 @@ CreateNotePage.propTypes = {
   deleteNote: PropTypes.func.isRequired,
   setNotes: PropTypes.func.isRequired,
 };
-
-export default CreateNotePage;

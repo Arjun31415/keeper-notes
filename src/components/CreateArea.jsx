@@ -3,10 +3,11 @@ import React, { useEffect, useState } from "react";
 
 import AddIcon from "@mui/icons-material/Add";
 import PaletteIcon from "@mui/icons-material/Palette";
+import PropTypes from "prop-types";
 import { SwatchesPicker } from "react-color";
 import { v4 as uuidv4 } from "uuid";
 
-function CreateArea(p) {
+function CreateArea({ addNote }) {
   const lightColors = [
     "#F28B82",
     "#FBBC04",
@@ -59,7 +60,12 @@ function CreateArea(p) {
     event.preventDefault();
     if (title === "" || content === "") return;
     console.log("handleClick: ", color);
-    p.addNote({ id: uuidv4(), title: title, content: content, color: color });
+    addNote({
+      id: uuidv4(),
+      title: title,
+      content: content,
+      color: color,
+    });
     setTitle("");
     setContent("");
     setColor(null);
@@ -149,5 +155,8 @@ function CreateArea(p) {
     </div>
   );
 }
+CreateArea.propTypes = {
+  addNote: PropTypes.func.isRequired,
+};
 
 export default CreateArea;
