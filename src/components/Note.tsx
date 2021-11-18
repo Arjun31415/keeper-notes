@@ -62,14 +62,7 @@ function Note(props: {
           colors={[lightColors]}
           width={7000}
           height={200}
-          onChange={(c: {
-            hex: String;
-            hsl: { h: Number; s: Number; l: Number };
-            hsv: { h: Number; s: Number; v: Number };
-            oldHue: Number;
-            rgb: { r: Number; g: Number; b: Number };
-            source: String;
-          }) => {
+          onChange={(c: { hex: String }) => {
             console.log(c);
             setColor(c.hex);
             console.log("color:", color);
