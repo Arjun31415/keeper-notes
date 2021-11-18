@@ -6,8 +6,7 @@ import { ItemTypes } from "../utils/constants.ts";
 import PaletteOutlinedIcon from "@mui/icons-material/PaletteOutlined";
 import PushPinOutlinedIcon from "@mui/icons-material/PushPinOutlined";
 import { SwatchesPicker } from "react-color";
-
-// import { useDrag } from "react-dnd";
+import { useDrag } from "react-dnd";
 
 function Note(props) {
   const lightColors = [
@@ -30,15 +29,15 @@ function Note(props) {
     props.delete(props.id);
   }
   // Make the NOTE Draggable
-  // const [{ isDragging }, drag] = useDrag(() => ({
-  //   type: ItemTypes.NOTE,
-  //   collect: (monitor) => ({
-  //     isDragging: !!monitor.isDragging(),
-  //   }),
-  // }));
+  const [{ isDragging }, drag] = useDrag(() => ({
+    type: ItemTypes.NOTE,
+    collect: (monitor) => ({
+      isDragging: !!monitor.isDragging(),
+    }),
+  }));
 
   return (
-    <div className="note" style={{ backgroundColor: color }}>
+    <div className="note" style={{ backgroundColor: color }} ref={drag}>
       <h1>{props.title}</h1>
       <p>{props.content}</p>
       <button onClick={handleDelete} style={{ color: "#3d3535de", zIndex: 5 }}>
