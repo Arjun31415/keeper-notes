@@ -3,6 +3,7 @@ import React, { useState } from "react";
 /* eslint-disable react/prop-types */
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 import PaletteOutlinedIcon from "@mui/icons-material/PaletteOutlined";
+import PushPinOutlinedIcon from "@mui/icons-material/PushPinOutlined";
 import { SwatchesPicker } from "react-color";
 
 function Note(props) {
@@ -25,7 +26,6 @@ function Note(props) {
   function handleDelete() {
     props.delete(props.id);
   }
-  console.log(props);
   return (
     <div className="note" style={{ backgroundColor: color }}>
       <h1>{props.title}</h1>
@@ -38,6 +38,9 @@ function Note(props) {
         style={{ color: "#3d3535de", zIndex: 5 }}
       >
         <PaletteOutlinedIcon />
+      </button>
+      <button style={{ color: "#3d3535de", zIndex: 5 }}>
+        <PushPinOutlinedIcon />
       </button>
       <div
         style={{

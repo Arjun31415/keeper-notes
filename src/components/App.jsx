@@ -1,17 +1,29 @@
 import React, { useState } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
-import CreateArea from "./CreateArea";
+import CreateNotePage from "./CreateNotePage";
 import Footer from "./Footer";
 import Header from "./Header";
 import Login from "./Login";
-import Note from "./Note";
 import SignUp from "./SignUp";
 
 function App() {
   // React hook
-  const [notes, setNotes] = useState([]);
-
+  const [notes, setNotes] = useState([
+    {
+      color: "#fbbc04",
+      title: "First Note",
+      content: "This is the first Note",
+      id: "IamFirst",
+    },
+    {
+      color: "#afffff",
+      title: "Second Note",
+      content: "This is the second Note",
+      id: "IamSecond",
+    },
+  ]);
+  // setNotes({});
   function addNote(newNote) {
     // Spread operator
     // console.log("newNote", newNote);
@@ -21,6 +33,7 @@ function App() {
     // arrow functions
     setNotes((prev) => prev.filter((x) => x.id !== id));
   }
+
   return (
     <Router>
       <div>
@@ -29,19 +42,12 @@ function App() {
           <Route
             path="/note"
             element={
-              <>
-                <CreateArea addNote={addNote} />
-                {notes.map((x) => (
-                  <Note
-                    key={x.id}
-                    title={x.title}
-                    content={x.content}
-                    id={x.id}
-                    delete={deleteNote}
-                    color={x.color}
-                  />
-                ))}
-              </>
+              <CreateNotePage
+                addNote={addNote}
+                deleteNote={deleteNote}
+                notes={notes}
+                setNotes={setNotes}
+              />
             }
           />
           <Route path="/signup" element={<SignUp />} />{" "}
@@ -51,5 +57,13 @@ function App() {
       </div>
     </Router>
   );
+  // return (
+  //   <CreateNotePage
+  //     addNote={addNote}
+  //     deleteNote={deleteNote}
+  //     notes={notes}
+  //     setNotes={setNotes}
+  //   />
+  // );
 }
 export default App;

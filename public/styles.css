@@ -186,3 +186,7 @@ form.create-note button {
   border-radius: 5px;
   box-shadow: 7px 7px 15px rgb(255, 187, 19);
 }
+
+.bg-primary {
+  background-color: rgb(245, 186, 19);
+}
