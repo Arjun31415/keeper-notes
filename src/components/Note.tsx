@@ -8,7 +8,13 @@ import { SwatchesPicker } from "react-color";
 
 // import { useDrag } from "react-dnd";
 
-function Note(props) {
+function Note(props: {
+  color: any;
+  delete: (arg0: any) => void;
+  id: String;
+  title: String;
+  content: String;
+}) {
   const lightColors = [
     "#F28B82",
     "#FBBC04",
@@ -47,9 +53,6 @@ function Note(props) {
       <div
         style={{
           position: "absolute",
-          // zIndex: "2",
-          // left: "330px",
-          // top: "190px",
         }}
         hidden={!displayColorPicker}
         tabIndex={1}
@@ -59,7 +62,14 @@ function Note(props) {
           colors={[lightColors]}
           width={7000}
           height={200}
-          onChange={(c) => {
+          onChange={(c: {
+            hex: String;
+            hsl: { h: Number; s: Number; l: Number };
+            hsv: { h: Number; s: Number; v: Number };
+            oldHue: Number;
+            rgb: { r: Number; g: Number; b: Number };
+            source: String;
+          }) => {
             console.log(c);
             setColor(c.hex);
             console.log("color:", color);
