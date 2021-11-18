@@ -1,4 +1,6 @@
 import CreateArea from "./CreateArea";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 import Note from "./Note";
 import PropTypes from "prop-types";
 import React from "react";
@@ -8,6 +10,7 @@ function CreateNotePage({ addNote, notes, deleteNote, setNotes }) {
     <>
       {/* create note area */}
       <CreateArea addNote={addNote} />
+
       {/* All the saved notes */}
 
       <div className="DND-AREA" style={{ height: "100%" }}>
