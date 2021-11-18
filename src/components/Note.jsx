@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 /* eslint-disable react/prop-types */
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
-import { Droppable } from "react-beautiful-dnd";
 import PaletteOutlinedIcon from "@mui/icons-material/PaletteOutlined";
 import PushPinOutlinedIcon from "@mui/icons-material/PushPinOutlined";
 import { SwatchesPicker } from "react-color";
