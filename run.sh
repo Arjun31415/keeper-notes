@@ -1,5 +1,6 @@
-touch netlify.toml
 cd "./build"
+touch netlify.toml
+
 echo "[build]
 # Directory to change to before starting a build.
 # This is where we will look for package.json/.nvmrc/etc.
