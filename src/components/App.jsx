@@ -9,20 +9,7 @@ import SignUp from "./SignUp";
 
 function App() {
   // React hook
-  const [notes, setNotes] = useState([
-    {
-      color: "#fbbc04",
-      title: "First Note",
-      content: "This is the first Note",
-      id: "IamFirst",
-    },
-    {
-      color: "#afffff",
-      title: "Second Note",
-      content: "This is the second Note",
-      id: "IamSecond",
-    },
-  ]);
+  const [notes, setNotes] = useState([]);
   // setNotes({});
   function addNote(newNote) {
     // Spread operator
