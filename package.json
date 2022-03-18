@@ -13,7 +13,7 @@
     "@testing-library/user-event": "^12.8.3",
     "eslint": "*",
     "eslint-plugin-react": "*",
-    "firebase": "^9.4.1",
+    "firebase": "^9.6.5",
     "history": "5",
     "react": "*",
     "react-color": "2.18.1",
@@ -21,7 +21,7 @@
     "react-dnd-html5-backend": "^14.0.2",
     "react-dom": "*",
     "react-router-dom": "6",
-    "react-scripts": "3.2.0",
+    "react-scripts": "5.0.0",
     "source-map-explorer": "^2.5.2",
     "uuid": "8.3.2"
   },
